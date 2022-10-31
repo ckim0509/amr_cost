@@ -16,7 +16,7 @@ library(tidyverse)
 
 # remove all objects from workspace
 rm (list = ls ())
-setwd("~/GitHub/WASH_typhoid")
+setwd("~/GitHub/amr_cost")
 
 # start time
 start_time <- Sys.time ()
@@ -27,83 +27,160 @@ print (paste0 ("start time = ", start_time))
 ### Importing data from Google Sheets
 dat <- read_sheet('https://docs.google.com/spreadsheets/d/16I5yak3-j3rEqLLcdFCcqzeQSyYjSGihXIbmZxqEILs/edit#gid=2036014622')
 
-### hospitalization day
-# data set
-dat_study <- dat[, c("Study", "Pathogen", "Suceptible_profile", "Resistance_profile", "Country")]
-         
-dat_hos_res <- dat[, 50:59]
-
-names(dat_hos_res) <- c("hospital_day_res", "statistical_measure", "comment", "uncertainty/range",
-                        "SD", "uncertainty/range_comment", "higher", "lower", "other", "n")
-
-dat_stu_hos_res <- cbind(dat_study, dat_hos_res)
-
-dat_stu_hos_res <- dat_stu_hos_res[(dat_stu_hos_res$Resistance_profile != "Mixed") &
-                                   (dat_stu_hos_res$Resistance_profile != "Susceptible") &
-                                   (dat_stu_hos_res$hospital_day_res   != "NULL"), ]
-
-dat_stu_hos_res <- data.table(dat_stu_hos_res)
-
-dat_stu_hos_res$hospital_day_res <- as.numeric(dat_stu_hos_res$hospital_day_res)
-
-dat_stu_hos_res[dat_stu_hos_res == "NULL"] <- NA
-
-dat_stu_hos_res$higher <- as.numeric(dat_stu_hos_res$higher)
-
-dat_stu_hos_res$lower <- as.numeric(dat_stu_hos_res$lower)
-
-# adjust variables
-dat_stu_hos_res[statistical_measure == "Mean", Mean := hospital_day_res]
-
-dat_stu_hos_res[statistical_measure == "Median", Median := hospital_day_res]
-
-dat_stu_hos_res[`uncertainty/range` == "Interquartile range", higher_i := higher]
-
-dat_stu_hos_res[`uncertainty/range` == "Interquartile range", lower_i := lower]
-
-dat_stu_hos_res[`uncertainty/range` == "Range", higher_r := higher]
-
-dat_stu_hos_res[`uncertainty/range` == "Range", lower_r := lower]
-
-dat_stu_hos_res$Pathogen <- factor(dat_stu_hos_res$Pathogen,
+### Study data
+dat_study <- dat[, c("Study", "Pathogen", "Susceptible_profile", "Resistance_profile", "Country")]
+dat_study$Pathogen <- factor(dat_study$Pathogen,
                                    levels = c("S. Typhi", 
                                               "S. Typhi and S. Paratyphi",
                                               "S. non-Typhi"))
 
-dat_meta <- dat_stu_hos_res[!(is.na(higher) & statistical_measure == "Median"), ]
-# dat_meta <- dat_meta[!is.na(`uncertainty/range`), ]
-# dat_meta <- dat_meta[dat_meta$Pathogen != "Salmonella non-typhi", ]
+dat_study$Resistance_profile <- factor(dat_study$Resistance_profile,
+                             levels = c("Amikacin res.",
+                                        "Ciprofloxacin res.",
+                                        "Nalidixic acid res.",
+                                        "MDR",
+                                        "XDR"))
 
-dat_meta <- dat_meta %>% arrange(Pathogen, Resistance_profile)
+# Hospitalization day data -- resistance
+dat_los_res <- dat[, 59:67]
 
-# meta & forestplot -- Salmonella_typhi
-ma.data <- metamean(n = n, 
-                    mean = Mean, 
-                    data = dat_meta, 
-                    sd = SD,
-                    median = Median,
-                    q1 = lower_i, 
-                    q3 = higher_i,
-                    min = lower_r, 
-                    max = higher_r,
-#                   subgroup = Pathogen,
-                    common = FALSE,
-                    random = TRUE,
-                    overall = FALSE,
-                    overall.hetstat = FALSE)
-       
-png(file = "forestplot.png", width = 3300, height = 1000, res = 300)
+dat_stu_hos_res <- cbind(dat_study, dat_los_res)
 
-forest(ma.data,
-       leftcols = c("Study", "Pathogen", "Resistance_profile", "Country"),
-       leftlabs = c("Study", "Pathogen", "Resistance", "Country"),
-       rightlabs = c("Mean", "95% CI"),
-#      subgroup = FALSE,
-       xlim = c(1,15),
-       print.byvar = TRUE)
+dat_stu_hos_res <- dat_stu_hos_res[dat_stu_hos_res$Resistance_profile != "Mixed" &
+                                   dat_stu_hos_res$Resistance_profile != "Susceptible" &
+                                   dat_stu_hos_res$`How many days did the hospitalisation last?_resistant` != "NULL", ]
 
-dev.off()
+# Hospitalization day data -- susceptible
+dat_los_sus <- dat[, 50:58]
+
+dat_stu_hos_sus <- cbind(dat_study, dat_los_sus)
+
+dat_stu_hos_sus <- dat_stu_hos_sus[((dat_stu_hos_sus$Susceptible_profile != "Mixed") &
+                                   !is.na(dat_stu_hos_sus$Susceptible_profile) &
+                                   (dat_stu_hos_sus$`How many days did the hospitalisation last?_susceptible` != "NULL")), ]
 
 
+# Duration of fever -- resistance
+dat_fev_res <- dat[, 41:49]
+
+dat_stu_fev_res <- cbind(dat_study, dat_fev_res)
+
+dat_stu_fev_res <- dat_stu_fev_res[((dat_stu_fev_res$Resistance_profile != "Mixed") &
+                                    !is.na(dat_stu_fev_res$Resistance_profile) &
+                                    (dat_stu_fev_res$`How many days did the symptoms last?_resistant` != "NULL")), ]
+
+# Duration of fever -- susceptible
+dat_fev_sus <- dat[, 32:40]
+
+dat_stu_fev_sus <- cbind(dat_study, dat_fev_sus)
+
+dat_stu_fev_sus <- dat_stu_fev_sus[((dat_stu_fev_sus$Susceptible_profile != "Mixed") &
+                                    !is.na(dat_stu_fev_sus$Susceptible_profile) &
+                                    (dat_stu_fev_sus$`How many days did the symptoms last?_susceptible` != "NULL")), ]
+
+# create function to generate forest plot
+forest_plot <- function(dat, type, width_input, height_input, xlim_low, xlim_high, file_name){
+  
+  dat <- data.table(dat)
+  
+  colnames(dat)[6:14] <- c("day", "statistical_measure", "comment", "uncertainty/range",
+                           "uncertainty/range_comment", "higher", "lower", "other", "n")
+  
+  dat[dat == "NULL"] <- NA
+  
+  dat$day <- as.numeric(dat$day)
+  
+  dat$higher <- as.numeric(dat$higher)
+  
+  dat$lower <- as.numeric(dat$lower)
+  
+  dat$other <- as.numeric(dat$other)
+  
+  # adjust variables
+  dat[statistical_measure == "Mean", Mean := day]
+  
+  dat[statistical_measure == "Median", Median := day]
+  
+  dat[`uncertainty/range` == "Interquartile range", higher_i := higher]
+  
+  dat[`uncertainty/range` == "Interquartile range", lower_i := lower]
+  
+  dat[`uncertainty/range` == "Range", higher_r := higher]
+  
+  dat[`uncertainty/range` == "Range", lower_r := lower]
+  
+  dat[`uncertainty/range` == "Standard deviation", SD := other]
+  
+  # dat_meta <- dat_meta[!is.na(`uncertainty/range`), ]
+  # dat_meta <- dat_meta[dat_meta$Pathogen != "Salmonella non-typhi", ]
+  
+  dat_meta <- dat[!(is.na(higher) & statistical_measure == "Median"), ]
+  
+  if (paste(type) == "Resistance") {
+    dat_meta <- dat_meta %>% arrange(Pathogen, Resistance_profile)
+    dat_meta <- dat_meta %>% rename("Resistance" = "Resistance_profile")
+  } else {
+    dat_meta <- dat_meta %>% arrange(Pathogen, Susceptible_profile)
+    dat_meta <- dat_meta %>% rename("Susceptible" = "Susceptible_profile")
+  }
+  
+  # meta & forestplot -- Salmonella_typhi
+  ma.data <- metamean(n = n, 
+                      mean = Mean, 
+                      data = dat_meta, 
+                      sd = SD,
+                      median = Median,
+                      q1 = lower_i, 
+                      q3 = higher_i,
+                      min = lower_r, 
+                      max = higher_r,
+  #                   subgroup = Pathogen,
+                      common = FALSE,
+                      random = TRUE,
+                      overall = FALSE,
+                      overall.hetstat = FALSE)
+  
+  png(file = paste(file_name), width = width_input, height = height_input, res = 300)
+  
+  forest(ma.data,
+         leftcols = c("Study", "Pathogen", paste(type), "Country"),
+         rightlabs = c("Mean", "95% CI"),
+  #      subgroup = FALSE,
+         xlim = c(xlim_low, xlim_high),
+         print.byvar = TRUE)
+  
+  dev.off()
+  
+  return(ma.data)}
 
 
+los_res <- forest_plot(dat          = dat_stu_hos_res,
+                       type         = "Resistance",
+                       width_input  = 3200,
+                       height_input = 1100,
+                       xlim_low     = 1, 
+                       xlim_high    = 15,
+                       file_name    = "lenth_of_hospital_stay_res.png")
+
+los_sus <- forest_plot(dat          = dat_stu_hos_sus, 
+                       type         = "Susceptible",
+                       width_input  = 3200,
+                       height_input = 600,
+                       xlim_low     = 1, 
+                       xlim_high    = 15,
+                       file_name    = "lenth_of_hospital_stay_sus.png")
+
+fev_res <- forest_plot(dat          = dat_stu_fev_res,
+                       type         = "Resistance",
+                       width_input  = 3200,
+                       height_input = 1100,
+                       xlim_low     = 1, 
+                       xlim_high    = 30,
+                       file_name    = "duration_of_fever_res.png")
+fev_sus <- forest_plot(dat          = dat_stu_fev_sus, 
+                       type         = "Susceptible",
+                       width_input  = 3200,
+                       height_input = 600,
+                       xlim_low     = 1, 
+                       xlim_high    = 30,
+                       file_name    = "duration_of_fever_stay_sus.png")
