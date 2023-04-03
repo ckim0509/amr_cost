@@ -1,0 +1,17 @@
+Pathogen,Classification,Country,Sample_size,Mean_value,Lower,Upper,Reference
+S. Typhi and S. Paratyphi,Nalidixic acid sus.,Australia,57,5.7,,,Hume et al.
+S. Typhi,Drug-sensitive,Pakistan,13,4,3.34820599111586,4.65179400888414,Herekar et al.
+S. Typhi,Drug-sensitive,Pakistan,31,4.96680550762104,4.1965212113302,5.73708980391189,Herekar et al.
+S. Typhi,Mixed,India,303.36,6.5,,,Ganesh et al.
+S. Typhi,Mixed,Australia,59,6.7,,,Hume et al.
+S. Paratyphi,Mixed,Australia,45,5.8,,,Hume et al.
+S. Typhi and S. Paratyphi,Mixed,India,146,9.64,8.79003126683175,10.4899687331682,Bandyopadhyay et al.
+S. Typhi and S. Paratyphi,Mixed,India,30,10,7.10996540662427,12.8900345933757,Dahiya et al.
+S. Typhi and S. Paratyphi,Mixed,Nepal,455,6,5.7266688532057,6.2733311467943,Longley et al.
+S. Typhi and S. Paratyphi,Mixed,Bangladesh,1295,6.70030115830116,6.53862095108503,6.86198136551728,Longley et al.
+S. Typhi and S. Paratyphi,Mixed,New Zealand,162,6,5.53964330697569,6.46035669302431,Lane et al.
+S. Typhi and S. Paratyphi,Mixed,Pakistan,1054,3.35018500948767,3.21574004887899,3.48462997009634,Longley et al.
+S. Typhi and S. Paratyphi,Mixed,India,156,6,5.76461593922335,6.23538406077665,Sharma et al.
+S. Typhi and S. Paratyphi,Mixed,India,63,7.35,,,Nagaraj et al.
+S. Typhi and S. Paratyphi,Mixed,India,63,9.44,,,Nagaraj et al.
+S. Typhi,Non-XDR,Pakistan,505,7.90154455445545,7.05860851481617,8.74448059409472,Fatima et al.

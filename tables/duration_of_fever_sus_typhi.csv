@@ -1,0 +1,8 @@
+Pathogen,Classification,Country,Sample_size,Mean_value,Lower,Upper,Reference
+S. Typhi,Nalidixic acid sus.,India,4,4.80375,-0.145654001363772,9.75315400136377,Bandyopadhyay et al.
+S. Typhi and S. Paratyphi,Nalidixic acid sus.,Australia,57,3.3,,,Hume et al.
+S. Typhi,Drug-sensitive,Pakistan,13,26.6168379162366,12.4403182230065,40.7933576094667,Herekar et al.
+S. Typhi,Drug-sensitive,Pakistan,31,15.9860060217051,8.36875020282894,23.6032618405813,Herekar et al.
+S. Typhi,Mixed,Australia,59,4.7,,,Hume et al.
+S. Paratyphi,Mixed,Australia,45,3.1,,,Hume et al.
+S. Typhi and S. Paratyphi,Mixed,India,30,6.4,5.00442856790062,7.79557143209938,Dahiya et al.

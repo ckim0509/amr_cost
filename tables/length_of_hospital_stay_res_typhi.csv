@@ -1,0 +1,11 @@
+Pathogen,Classification,Country,Sample_size,Mean_value,Lower,Upper,Reference
+S. Typhi,Amikacin res.,Turkey,45,2.18713990674244,1.92242943771214,2.45185037577274,Karakecili et al.
+S. Typhi and S. Paratyphi,Nalidixic acid res.,Australia,39,7.9,,,Hume et al.
+S. Typhi,MDR,Turkey,137,3.7,3.41533325936306,3.98466674063694,Aypak et al.
+S. Typhi,MDR,Turkey,15,5.6,4.48666684554414,6.71333315445586,Aypak et al.
+S. Typhi,MDR,Pakistan,77,5.40008406430559,4.84280253028098,5.95736559833019,Herekar et al.
+S. Typhi,MDR,Pakistan,629,4.10802509038786,3.94375355926779,4.27229662150793,Herekar et al.
+S. Typhi,XDR,Pakistan,947,12.3016473072862,11.2140595159382,13.3892350986342,Fatima et al.
+S. Typhi,XDR,Pakistan,86,8.37220157075567,7.59417245647385,9.15023068503748,Herekar et al.
+S. Typhi,XDR,Pakistan,679,6.11677508865257,5.89944698018309,6.33410319712206,Herekar et al.
+S. Typhi,XDR,Pakistan,101,6,5.12019380928293,6.87980619071707,Shahid et al.

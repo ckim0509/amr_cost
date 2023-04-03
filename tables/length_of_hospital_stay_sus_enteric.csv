@@ -1,0 +1,5 @@
+Pathogen,Classification,Country,Sample_size,Mean_value,Lower,Upper,Reference,Value_comment,Note
+E Coli,Mixed,Austria,95,18.7602631578947,15.8875765593167,21.6329497564728,Berger et al.,,
+E Coli,non-ESBL,Thailand,46,7.77119565217391,5.34648919709302,10.1959021072548,Apisarnthanarak et al.,,
+E Coli,sus.,China,130,21,20.6905796165651,21.3094203834349,Jia et al.,Case group,HAI caused
+Shigella spp.,Not reported,United States of America (USA),2653,3,2.94355274905655,3.05644725094345,McCrickard et al.,,

@@ -1,0 +1,7 @@
+Pathogen,Classification,Country,Sample_size,Mean_value,Lower,Upper,Reference
+S. non-Typhi,Ampicillin res.,USA,10,6.2,,,Mukherjee et al.
+S. non-Typhi,Nalidixic acid res.,China,162,8.54,,,Broughton et al.
+S. non-Typhi,res.,USA,39,5.9,,,Mukherjee et al.
+S. non-Typhi,Tetracycline res.,USA,7,6,,,Mukherjee et al.
+S. non-Typhi,MDR,China,49,8.93,6.60604270404537,11.2539572959546,Liang et al.
+S. non-Typhi,MDR,USA,79,5.74596533924594,4.649852430436,6.84207824805587,Solghan et al.

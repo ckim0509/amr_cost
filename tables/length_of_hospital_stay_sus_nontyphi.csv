@@ -1,0 +1,11 @@
+Pathogen,Classification,Country,Sample_size,Mean_value,Lower,Upper,Reference
+S. non-Typhi,Pansusceptible,USA,48,4,,,Mukherjee et al.
+S. non-Typhi,Pansusceptible,USA,301,5.20632832027667,4.18168044646479,6.23097619408855,Solghan et al.
+S. non-Typhi,Ampicillin sus.,USA,49,4,,,Mukherjee et al.
+S. non-Typhi,Nalidixic acid sus.,China,163,4.66,,,Broughton et al.
+S. non-Typhi,Tetracycline sus.,USA,52,4.15,,,Mukherjee et al.
+S. non-Typhi,Mixed,Vietnam,450,5,4.72514474943138,5.27485525056862,Duong et al.
+S. non-Typhi,Mixed,Spain,21660,7.1,6.9881339892652,7.2118660107348,Garrido-Estepa et al.
+S. non-Typhi,Mixed,Taiwan,118,6.8,,,Huang et al.
+S. non-Typhi,Mixed,Taiwan,179,8.6,,,Huang et al.
+S. non-Typhi,Mixed,China,171,6.05,5.37253249235116,6.72746750764884,Liang et al.

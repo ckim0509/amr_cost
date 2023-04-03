@@ -1,0 +1,3 @@
+Pathogen,Classification,Country,Sample_size,Mean_value,Lower,Upper,Reference,Value_comment,Note
+E Coli,ESBL,France,17168,5728,5622.91649081705,5833.08350918295,Touat et al.,,Payer perspective
+E Coli,ESBL,France,17168,955,,,Touat et al.,Excess,Payer perspective
