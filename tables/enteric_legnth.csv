@@ -1,0 +1,11 @@
+Category,Pathogen,Classification,Country,Sample_size,Mean_value,Lower,Upper,Reference,Value_comment,Note
+sym_sus,Shigella spp.,Azithromycin sus.,Bangladesh,85,3.6,3.21734170397308,3.98265829602692,Houpt et al.,Duration of diarrhea,Days until resolution of diarrhea
+sym_res,Shigella spp.,Azithromycin res.,Bangladesh,64,4.6,4.03651035444473,5.16348964555527,Houpt et al.,Duration of diarrhea,Days until resolution of diarrhea
+hos_sus,E Coli,Mixed,Austria,95,18.7602631578947,15.8875765593167,21.6329497564728,Berger et al.,,
+hos_sus,E Coli,non-ESBL,Thailand,46,7.77119565217391,5.34648919709302,10.1959021072548,Apisarnthanarak et al.,,
+hos_sus,E Coli,sus.,China,130,21,20.6905796165651,21.3094203834349,Jia et al.,Case group,HAI caused
+hos_sus,Shigella spp.,Not reported,United States of America (USA),2653,3,2.94355274905655,3.05644725094345,McCrickard et al.,,
+hos_res,E Coli,Carbapenem res. (MDR),China,28,27.5,26.7962430831929,28.2037569168071,Jia et al.,Case group,HAI caused
+hos_res,E Coli,ESBL,Thailand,46,17.9186956521739,8.66072555095595,27.1766657533919,Apisarnthanarak et al.,,
+hos_res,E Coli,ESBL,France,17168,1.2,,,Touat et al.,Excess,
+hos_res,E Coli,ESBL (MDR),China,124,22.8,22.4655810727653,23.1344189272347,Jia et al.,Case group,HAI caused

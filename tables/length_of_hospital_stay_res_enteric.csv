@@ -1,4 +1,0 @@
-Pathogen,Classification,Country,Sample_size,Mean_value,Lower,Upper,Reference,Value_comment,Note
-E Coli,Carbapenem res. (MDR),China,28,27.5,26.7962430831929,28.2037569168071,Jia et al.,Case group,HAI caused
-E Coli,ESBL,France,17168,1.2,,,Touat et al.,Excess,
-E Coli,ESBL (MDR),China,124,22.8,22.4655810727653,23.1344189272347,Jia et al.,Case group,HAI caused
