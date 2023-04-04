@@ -1,5 +1,5 @@
-Category,Pathogen,Classification,Country,Sample_size,Mean_value,Lower,Upper,Reference,Value_comment,Note
-cost_sus,E Coli,non-ESBL,Thailand,46,346.358804347826,165.38753165497,527.330077040682,Apisarnthanarak et al.,,Health care sector perspective
-cost_res,E Coli,ESBL,Thailand,46,1293.15652173913,603.21732133884,1983.09572213942,Apisarnthanarak et al.,,Health care sector perspective
-cost_res,E Coli,ESBL,France,17168,5728,5622.91649081705,5833.08350918295,Touat et al.,,Payer perspective
-cost_res,E Coli,ESBL,France,17168,955,,,Touat et al.,Excess,Payer perspective
+Category,Pathogen,Classification,Country,Sample_size,Mean_value,Lower,Upper,Reference,Value_comment,Note,Cost_currency,Cost_year
+cost_sus,E Coli,non-ESBL,Thailand,46,346.358804347826,165.38753165497,527.330077040682,Apisarnthanarak et al.,,Health care sector perspective,USD,2004
+cost_res,E Coli,ESBL,Thailand,46,1293.15652173913,603.21732133884,1983.09572213942,Apisarnthanarak et al.,,Health care sector perspective,USD,2004
+cost_res,E Coli,ESBL,France,17168,5728,5622.91649081705,5833.08350918295,Touat et al.,,Payer perspective,Euro,2015
+cost_res,E Coli,ESBL,France,17168,955,,,Touat et al.,Excess,Payer perspective,Euro,2015
