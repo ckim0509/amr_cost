@@ -1,0 +1,3 @@
+load("/Users/chaelinkim/Documents/GitHub/amr_cost/data/wb_GDP_deflator.RData")
+load("/Users/chaelinkim/Documents/GitHub/amr_cost/data/inflation_source.RData")
+load("/Users/chaelinkim/Documents/GitHub/amr_cost/data/who_whoc_wb.RData")

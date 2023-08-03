@@ -16,11 +16,10 @@ library(tidyverse)
 
 # remove all objects from workspace
 rm (list = ls ())
-setwd("~/GitHub/amr_cost")
 
-# start time
-start_time <- Sys.time ()
-print (paste0 ("start time = ", start_time))
+# move to base directory (run code from source directory)
+source_wd <- getwd ()
+setwd ("../")
 
 # -----------------------------------------------------------------------------
 
@@ -355,3 +354,4 @@ cost     <- forest_plot(dat            = dat_stu_cost,
                         xlim_low       = 1, 
                         xlim_high      = 5000,
                         file_name      = "cost.png")
+
