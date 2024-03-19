@@ -2,7 +2,7 @@ Length of hospital stay and associated treatment costs for patients with suscept
 systematic review and meta-analysis
 
 --------------------------------------------------------------------------------  
-AMR Cost burden
+AMR Cost burden
 --------------------------------------------------------------------------------  
 
 Folders: 
