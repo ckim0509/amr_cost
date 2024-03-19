@@ -1,6 +1,6 @@
 ---
-#  title: "Hospital-related costs of antibiotic-resistant enteric infections: 
-#  a systematic review and meta-analysis"
+# title: "Hospital-related costs of antibiotic-resistant enteric infections: 
+# a systematic review and meta-analysis"
 ---
 
 Sys.setenv(LANG = "en")
@@ -21,8 +21,12 @@ library(tidyverse)
 rm (list = ls ())
 
 # move to base directory (run code from source directory)
+setwd("~/Documents/GitHub/amr_cost/code")
 source_wd <- getwd ()
 setwd ("../")
+
+# source a code file ("inflation_enteric.R")
+source("code/inflation.R")
 
 # -----------------------------------------------------------------------------
 ### Importing data from Google Sheets
@@ -32,15 +36,41 @@ dat[is.na(`Should this study be included?_comment`),
 dat <- dat[((`Should this study be included?` != "No") &
               (`Should this study be included?_comment` != "No")),]
 
+# add iso3c
+dat$iso3c <- countrycode(dat$Country, origin="country.name", destination="iso3c")
+
+### add quantile level of GDP per capita
+
+# GDP per capita (current US$)
+# https://data.worldbank.org/indicator/NY.GDP.PCAP.CD
+# gdp_per_capita_data <- wb_data(indicator = "NY.GDP.PCAP.CD")
+# gdp_per_capita_data <- as.data.table(gdp_per_capita_data)
+# save(gdp_per_capita_data, file="data/gdp_per_capita_data.RData")
+load("data/gdp_per_capita_data.RData")
+# filter rows where the "date" column is "2019"
+gdp_per_capita_2019 <- gdp_per_capita_data[date == "2019", c("iso3c", "NY.GDP.PCAP.CD")]
+
+# generate quantile levels for GDP per capita
+quantiles <- quantile(gdp_per_capita_2019$NY.GDP.PCAP.CD, probs = seq(0, 1, by = 0.25), na.rm = TRUE)
+
+# create a new column for quantile levels
+gdp_per_capita_2019[, quantile_level := cut(NY.GDP.PCAP.CD, quantiles, labels = FALSE, include.lowest = TRUE)]
+
+# add quantile level of GDP per capita to data
+dat <- left_join(dat, gdp_per_capita_2019, by = c("iso3c"))
+# add quantile level for Taiwan ($25,903, 2019)
+dat <- dat[iso3c == "TWN", quantile_level := 4]
+
 ### pathogen
 names(dat)
 unique(dat$Pathogen)
-# dat <- dat[((Pathogen == "E Coli" | Pathogen == "Shigella spp.")), ]
 
 ### Study data
 dat_study <- dat[, c("Study", "Pathogen", 
-                     "Susceptible_profile", "Resistance_profile", 
-                     "Country", "Cohort")]
+                     "Susceptible_profile", 
+                     "Resistance_profile", 
+                     "Country", "Cohort",
+                     "iso3c", "quantile_level")]
 
 # Hospitalization day data -- susceptible
 dat_hos_sus <- cbind(dat_study, dat[, 49:57])
@@ -82,7 +112,6 @@ dat_sym_res[, Category := "sym_res"]
 dat_sym_sus <- dat_sym_sus %>% rename("values" = "How many days did the symptoms last?_susceptible")
 dat_sym_res <- dat_sym_res %>% rename("values" = "How many days did the symptoms last?_resistant")
 # -----------------------------------------------------------------------------
-
 
 
 # -----------------------------------------------------------------------------
@@ -127,14 +156,14 @@ dat_cost_res <- dat_cost_res %>%
 # -----------------------------------------------------------------------------
 
 
-
 # -----------------------------------------------------------------------------
 # create function to generate table and forest plot
-generate_table_plot <- function(dat, subgroup_input, width_input, height_input, 
+generate_table_plot <- function(dat, subgroup_input, 
+                                width_input, height_input, 
                                 xlim_low, xlim_high,
                                 mode, figure_name){
-##  dat <- data.table(dat)
-  colnames(dat)[7:15] <- c("value", "statistical_measure", "comment", "uncertainty/range",
+  ##  dat <- data.table(dat)
+  colnames(dat)[9:17] <- c("value", "statistical_measure", "comment", "uncertainty/range",
                            "note", "higher", "lower", "other", "n")
   dat[dat == "NULL"] <- NA
   dat$value  <- as.numeric(dat$value)
@@ -162,6 +191,38 @@ generate_table_plot <- function(dat, subgroup_input, width_input, height_input,
   dat_meta[(`uncertainty/range` != is.na(SE)), 
            SD := SE * sqrt(n)]
   
+  dat_meta$subgroup_pathogen_GPC <- paste(dat_meta$Pathogen, dat_meta$quantile_level, sep = "_")
+
+  # ----------------------------------------------------------------------------
+  ### adjustment in cost
+  
+  if(mode == "cost"){
+    
+    # add cost_currency
+    dat_meta <- merge(dat_meta, currency_country, by="iso3c", all.x=TRUE, all.y=FALSE)
+    
+    # add WHO region
+    dat_meta <- merge(dat_meta, who_whoc_wb, by="iso3c", all.x=TRUE,all.y=FALSE)
+    
+    dat_meta <- dat_meta %>% 
+      rename("Cost_currency"   = "In what currency was the cost calculated?",
+             "Cost_year"       = "For what year was the cost calculated?")
+    
+    # convert cost to 2019 USD
+    for (i in 1:nrow(dat_meta)){
+      dat_meta[i, Mean     := cost_adj_lit(2019,dat_meta[i],"Mean",inf_xch_4function)]
+      dat_meta[i, SD       := cost_adj_lit(2019,dat_meta[i],"SD",inf_xch_4function)]
+      dat_meta[i, Median   := cost_adj_lit(2019,dat_meta[i],"Median",inf_xch_4function)]
+      dat_meta[i, lower_i  := cost_adj_lit(2019,dat_meta[i],"lower_i",inf_xch_4function)]
+      dat_meta[i, higher_i := cost_adj_lit(2019,dat_meta[i],"higher_i",inf_xch_4function)]
+      dat_meta[i, lower_r  := cost_adj_lit(2019,dat_meta[i],"lower_r",inf_xch_4function)]
+      dat_meta[i, higher_r := cost_adj_lit(2019,dat_meta[i],"higher_r",inf_xch_4function)]
+    }
+  } else{
+    
+  }
+  
+  # ----------------------------------------------------------------------------
   # meta & forestplot
   ma.data <- metamean(n = n,
                       mean = Mean,
@@ -172,7 +233,7 @@ generate_table_plot <- function(dat, subgroup_input, width_input, height_input,
                       q3 = higher_i,
                       min = lower_r,
                       max = higher_r,
-                      subgroup = Pathogen,
+                      subgroup = dat_meta$subgroup_pathogen_GPC,
                       random = TRUE,
                       fixed = FALSE,
                       overall = FALSE)
@@ -183,6 +244,7 @@ generate_table_plot <- function(dat, subgroup_input, width_input, height_input,
                      Pathogen       = ma.data$data$Pathogen,
                      Classification = ma.data$data$Profile,
                      Country        = ma.data$data$Country,
+                     Quantile_level = ma.data$data$quantile_level,
                      Sample_size    = ma.data$n,
                      Mean_value     = ma.data$mean,
                      Lower          = ma.data$lower,
@@ -191,8 +253,8 @@ generate_table_plot <- function(dat, subgroup_input, width_input, height_input,
                      Value_comment  = ma.data$data$comment,
                      Note           = ma.data$data$note,
                      Cohort         = ma.data$data$Cohort,
-                     Cost_currency  = ma.data$data$`In what currency was the cost calculated?`,
-                     Cost_year      = ma.data$data$`For what year was the cost calculated?`,
+                     Cost_currency  = ma.data$data$Cost_currency,
+                     Cost_year      = ma.data$data$Cost_year,
                      Cost_measure   = ma.data$data$`What cost was measured?`,
                      Cost_measure_c = ma.data$data$`What cost was measured?_comment`)
   } else{
@@ -200,6 +262,7 @@ generate_table_plot <- function(dat, subgroup_input, width_input, height_input,
                      Pathogen       = ma.data$data$Pathogen,
                      Classification = ma.data$data$Profile,
                      Country        = ma.data$data$Country,
+                     Quantile_level = ma.data$data$quantile_level,
                      Sample_size    = ma.data$n,
                      Mean_value     = ma.data$mean,
                      Lower          = ma.data$lower,
@@ -273,13 +336,13 @@ plot_los_res_enteric <- generate_table_plot(dat            = dat_hos_res,
 plot_cost_sus_enteric <- generate_table_plot(dat            = dat_cost_sus,
                                              subgroup_input = "TRUE",
                                              width_input    = 3600,
-                                             height_input   = 5200,
+                                             height_input   = 6000,
                                              xlim_low       = 1,
-                                             xlim_high      = 5000,
+                                             xlim_high      = 90000,
                                              mode           = "cost",
                                              figure_name    = "cost_sus_enteric.png")
 
-plot_cost_res_enteric <- generate_table_plot(dat           = dat_cost_res,
+plot_cost_res_enteric <- generate_table_plot(dat            = dat_cost_res,
                                              subgroup_input = "TRUE",
                                              width_input    = 3200,
                                              height_input   = 1300,
@@ -290,55 +353,42 @@ plot_cost_res_enteric <- generate_table_plot(dat           = dat_cost_res,
 # -----------------------------------------------------------------------------
 
 
-
 # -----------------------------------------------------------------------------
-# convert cost
-source("code/inflation_enteric.R")
+### save the table
+## length of symptom & hospital stay
+table_length  <- do.call("rbind", 
+                         list(plot_sym_sus_enteric, plot_sym_res_enteric,
+                              plot_los_sus_enteric, plot_los_res_enteric))
+
+table_length <- table_length[order(table_length$Category,
+                                   table_length$Pathogen,
+                                   table_length$Quantile_level,
+                                   table_length$Country,
+                                   table_length$Classification),]
+table_length <- table_length[!is.na(Mean_value),]
+
+fwrite (x    = table_length,
+        file = file.path("tables", "enteric_legnth.csv"))
+
+## cost
 cost_table  <- rbind(plot_cost_sus_enteric, plot_cost_res_enteric)
 
 # remove NA values
 cost_table <- cost_table[!is.na(Mean_value)]
 
-# add iso3
-cost_table$iso3c <- countrycode(cost_table$Country, origin="country.name", destination="iso3c")
-
-# add cost_currency
-cost_table <- merge(cost_table, currency_country, by="iso3c", all.x=TRUE, all.y=FALSE)
-
-# add WHO region
-cost_table <- merge(cost_table, who_whoc_wb, by="iso3c", all.x=TRUE,all.y=FALSE)
-
-# convert cost to 2019 USD
-for (i in 1:nrow(cost_table)){
-  cost_table[i, Mean    := cost_adj_lit(2019,cost_table[i],"Mean_value",inf_xch_4function)]
-  cost_table[i, Lower95 := cost_adj_lit(2019,cost_table[i],"Lower",inf_xch_4function)]
-  cost_table[i, Upper95 := cost_adj_lit(2019,cost_table[i],"Upper",inf_xch_4function)]
-}
-
 table_cost <- cost_table[, c("Category", "Pathogen", "Classification",
-                             "Country", "Sample_size", "Mean", 
-                             "Lower95", "Upper95", "Reference", "Value_comment", 
+                             "Country", "Quantile_level", "Sample_size", "Mean_value", 
+                             "Lower", "Upper", "Reference", "Value_comment", 
                              "Note", "Cohort", "Cost_measure", "Cost_measure_c")]
 
-# -----------------------------------------------------------------------------
-
-
-
-# -----------------------------------------------------------------------------
-# save the table
-# length of symptom & hospital stay
-table_length  <- do.call("rbind", 
-                         list(plot_sym_sus_enteric, plot_sym_res_enteric,
-                              plot_los_sus_enteric, plot_los_res_enteric))
-fwrite (x    = table_length,
-        file = file.path("tables", "enteric_legnth.csv"))
-
-# cost
 table_cost <- table_cost[order(table_cost$Category,
-                               table_cost$Pathogen, 
-                               table_cost$Classification, 
-                               table_cost$Country),]
+                               table_cost$Pathogen,
+                               table_cost$Quantile_level,
+                               table_cost$Country,
+                               table_cost$Classification),]
+
 fwrite (x    = table_cost,
         file = file.path("tables", "enteric_cost.csv"))
 # -----------------------------------------------------------------------------
 # end.
+

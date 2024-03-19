@@ -1,0 +1,25 @@
+Category,Pathogen,Classification,Country,Quantile_level,Sample_size,Mean_value,Lower,Upper,Reference,Value_comment,Note,Cohort,Cost_measure,Cost_measure_c
+cost_sus,S. Typhi and S. Paratyphi,Mixed,Pakistan,1,1011,228.590708021182,211.432759416516,245.748656625849,Mejia et al.,a median cost of illness per case,,"patients with blood culture–confirmed enteric fever or with a
+nontraumatic terminal ileal perforation","Direct medical costs, direct nonmedical costs, and indirect costs (patient & caregiver)",Total cost of illness per case
+cost_sus,S. Typhi and S. Paratyphi,Mixed,Pakistan,1,980,175.524686075828,161.77108303267,189.278289118986,Mejia et al.,,,"patients with blood culture–confirmed enteric fever or with a
+nontraumatic terminal ileal perforation",Direct medical costs,Mean converted
+cost_sus,S. Typhi and S. Paratyphi,Not reported,Bangladesh,1,1737,94.0466485860882,89.057494087825,99.0358030843515,Mejia et al.,the median cost of illness per case of enteric fever from the patient and caregiver perspective,,"Hospitalised patients (patients ≤ 17 years with blood culture confirmed cases of Salmonella (S.) Typhi or Paratyphi, or with a nontraumatic terminal ileal perforation, regardless of blood culture result.)","Direct medical costs, direct nonmedical costs, and indirect costs (patient & caregiver)",Total cost of illness per case
+cost_sus,S. Typhi and S. Paratyphi,Not reported,Bangladesh,1,1735,78.137684121019,74.2489904178926,82.0263778241454,Mejia et al.,the median cost of illness per case of enteric fever from the patient and caregiver perspective,,"Hospitalised patients (patients ≤ 17 years with blood culture confirmed cases of Salmonella (S.) Typhi or Paratyphi, or with a nontraumatic terminal ileal perforation, regardless of blood culture result.)",Direct medical costs,Mean converted
+cost_sus,S. Typhi,Not reported,India,1,79,181.955410237957,,,Poulos et al.,,,all ages,Private costs and public costs,
+cost_sus,S. Typhi,Not reported,Pakistan,1,66,297.367365735364,,,Poulos et al.,,,all ages,Private costs and public costs,
+cost_sus,S. Typhi,Not reported,Indonesia,2,107,802.014165926571,,,Poulos et al.,,,all ages,Private costs and public costs,
+cost_sus,S. Typhi,Not reported,Vietnam,2,17,377.557693476693,,,Poulos et al.,,,all ages,Private costs and public costs,
+cost_sus,S. Typhi,Not reported,China,3,58,415.285569748889,,,Poulos et al.,,,all ages,Private costs and public costs,
+cost_sus,S. Typhi and S. Paratyphi,Not reported,United Kingdom,4,138,3067.02896825367,,,Reddy et al.,Average cost per patient,,all patients admitted with S.ser.Typhi or S. ser. Paratyphi bacteraemia,Inpatient treatment costs and the approximate public health costs,
+cost_sus,S. Typhi and S. Paratyphi,Not reported,United Kingdom,4,138,2873.61272701244,,,Reddy et al.,Average cost per patient,,all patients admitted with S.ser.Typhi or S. ser. Paratyphi bacteraemia,Inpatient treatment costs,
+cost_sus,S. non-Typhi,Nalidixic acid sus.,China,3,163,3492.70893765794,,,Broughton et al.,,,Patients 1 year of age or older. This form is for patients with quinolone-susceptible pathogen,Medical costs,
+cost_sus,S. non-Typhi,Not reported,Spain,4,21660,5351.20565798155,,,Garrido-Estepa et al.,,,patients all ages,Hospital costs,
+cost_res,S. Typhi and S. Paratyphi,MDR,Pakistan,1,169,153.75807706503,124.464529205805,183.051624924255,Mejia et al.,a median cost of illness per case,,"patients with blood culture–confirmed enteric fever or with a
+nontraumatic terminal ileal perforation","Direct medical costs, direct nonmedical costs, and indirect costs (patient & caregiver)",Total cost of illness per case
+cost_res,S. Typhi and S. Paratyphi,MDR,Pakistan,1,164,138.846904767918,110.869210849912,166.824598685923,Mejia et al.,,,"patients with blood culture–confirmed enteric fever or with a
+nontraumatic terminal ileal perforation",Direct medical costs,Mean converted
+cost_res,S. Typhi and S. Paratyphi,XDR,Pakistan,1,394,318.622055201973,276.555186752833,360.688923651112,Mejia et al.,a median cost of illness per case,,"patients with blood culture–confirmed enteric fever or with a
+nontraumatic terminal ileal perforation","Direct medical costs, direct nonmedical costs, and indirect costs (patient & caregiver)",Total cost of illness per case
+cost_res,S. Typhi and S. Paratyphi,XDR,Pakistan,1,387,281.064996317816,242.540826601817,319.589166033816,Mejia et al.,,,"patients with blood culture–confirmed enteric fever or with a
+nontraumatic terminal ileal perforation",Direct medical costs,Mean converted
+cost_res,S. non-Typhi,Nalidixic acid res.,China,3,162,5960.94419702072,,,Broughton et al.,,,Patients 1 year of age or older. This form is for the quinolone-resistant pathogens,Medical costs,

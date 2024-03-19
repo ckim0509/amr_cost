@@ -1,87 +1,84 @@
-Category,Pathogen,Classification,Country,Sample_size,Mean_value,Lower,Upper,Reference,Value_comment,Note,Cohort
-sym_sus,Clostridium difficile,Mixed,Taiwan,82,6,,,Chung et al.,Diarrhoea duration,The mean duration of diarrhea after the start of treatment  was 6 days in the present study,"Adult aged more than 18 years old, those include Patients with comorbidities"
-sym_sus,Clostridium difficile,Mixed,Turkey,30,8.23,,,Akgul et al.,Diarrhoea duration,Diarrhoea duration (days),"Older than 18 years age, males and females.C. difficile toxin A or B positive group."
-sym_sus,Clostridium difficile,Not reported,Germany,36,18.5,,,Heimann et al.,Diarrhoea duration,Duration of diarrhoea (days);,Recurrence group: Patients who developed ≥1 CDAD recurrence
-sym_sus,Clostridium difficile,Not reported,Germany,114,5.6,,,Heimann et al.,Diarrhoea duration,Duration of diarrhoea (days);,Incidence group: Patients with CDAD but without CDAD recurrence
-sym_sus,Clostridium difficile,Not reported,Italy,126,12.9,11.2752835886637,14.5247164113363,Asensio et al.,Diarrhoea duration,"Mean duration of diarrhoea, days (range)",All age
-sym_sus,Clostridium difficile,Not reported,Spain,94,10.1,8.18182012510687,12.0181798748931,Asensio et al.,Diarrhoea duration,"Mean duration of diarrhoea, days (range)",All age
-sym_sus,Shigella spp.,Azithromycin sus.,Bangladesh,85,3.6,,,Houpt et al.,Duration of diarrhea,Days until resolution of diarrhea,Patients in all age with diarrhea for < 96 hours
-sym_res,Shigella spp.,Azithromycin res.,Bangladesh,64,4.6,,,Houpt et al.,Duration of diarrhea,Days until resolution of diarrhea,Patients in all age with diarrhea for < 96 hours
-hos_sus,Clostridium difficile,Mixed,Lebanon,200,23.3,,,Karaoui et al.,,,"Co-morbidities: diabetes mellitus (45); chronic obstructive pulmonary disease (20), chronic kidney disease (67); immunocompromised (92); chemotherapy (79)
-Gender: both males and females"
-hos_sus,Clostridium difficile,Mixed,Taiwan,86,25.7,18.1790518952758,33.2209481047242,Chung et al.,,,"Adult aged more than 18 years old, those include Patients with comorbidities"
-hos_sus,Clostridium difficile,Not reported,Australia,26,12.6,8.10957287782674,17.0904271221733,Chen  BM et al.,,,"Men and women aged 45 years and older.
-This form for age group from 45- 54 years old"
-hos_sus,Clostridium difficile,Not reported,Australia,99,18.5,15.9821620558533,21.0178379441467,Chen  BM et al.,,,"Men and women aged 45 years and older.
-This form for age group from 55-64 years old"
-hos_sus,Clostridium difficile,Not reported,Australia,130,15.7,13.7685369323665,17.6314630676335,Chen  BM et al.,,,"Men and women aged 45 years and older.
-This form for age group from 65-74 years old"
-hos_sus,Clostridium difficile,Not reported,Australia,221,17.7,15.9291320576347,19.4708679423653,Chen  BM et al.,,,"Men and women aged 45 years and older.
-This form for age group from 75 - 84 years old"
-hos_sus,Clostridium difficile,Not reported,Australia,165,16.8,14.8613521544467,18.7386478455533,Chen  BM et al.,,,"Men and women aged 45 years and older.
-This form for age group more than 85"
-hos_sus,Clostridium difficile,Not reported,Australia,187,6.70208556149733,6.05984465895372,7.34432646404093,CHEN et al.,,,Adults aged over 45 years
-hos_sus,Clostridium difficile,Not reported,CANADA,20002,13.6,,,Levy et al.,,,Economic model
-hos_sus,Clostridium difficile,Not reported,Canada,1471,22.8514581917063,21.8276215608412,23.8752948225715,Nanwa et al.,,,
-hos_sus,Clostridium difficile,Not reported,China,45,34.56,,,Lv et al.,,,
-hos_sus,Clostridium difficile,Not reported,France,7477,11,,,Dinh et al.,,,Elderly patients with multiple co-morbidities
-hos_sus,Clostridium difficile,Not reported,Germany,36,94,,,Heimann et al.,,,Recurrence group: Patients who developed ≥1 CDAD recurrence
-hos_sus,Clostridium difficile,Not reported,Germany,114,32.2,,,Heimann et al.,,,Incidence group: Patients with CDAD but without CDAD recurrence
-hos_sus,Clostridium difficile,Not reported,Germany,45,30.8976666666667,24.4148424695943,37.3804908637391,Vonberg et al.,,,
-hos_sus,Clostridium difficile,Not reported,Greece,1211,18.9,,,Jiang et al.,,,"Patients 18 years of age or older discharged from one of Rhode Island’s 11 acute-care hospitals between January 1, 2010,
+Category,Pathogen,Classification,Country,Quantile_level,Sample_size,Mean_value,Lower,Upper,Reference,Value_comment,Note,Cohort
+hos_res,Clostridium difficile,Ciprofloxacin res.,Turkey,3,19,39,,,Ergen et al.,,,"Patients who developed diarrhea were detected by active surveillance, and a laboratory algorithm was applied to screen all feces samples for C. difficile in patients who had developed diarrhea three days or more after admission."
+hos_res,Clostridium difficile,Ciprofloxacin/levofloxacin res.,United States of America (USA),4,66,4.4,,,Naggie et al.,,,"Individuals who have 18 years old or more. Some had comorbidities such as Hypertension, Cardiovascular diseases, Diabetes mellitus, Gastroesophageal reflux, Cancer, and Bowel surgery"
+hos_res,E Coli,Carbapenem res. (MDR),China,3,28,27.5,,,Jia et al.,Case group,HAI caused,"Patients with HAIs were randomly selected in one hospitalincluding 10 lower respiratory tract infections includingventilator-associated pneumonia, 10 urinary tractinfections including catheter associated urinary tractinfections, 10 gastrointestinal infections including infectious diarrhea, gastrointestinal infection, andantimicrobial associated diarrhea], 10 surgical site infections, and 10 blood stream infections including central catheter associated blood stream infection"
+hos_res,E Coli,ESBL (MDR),China,3,124,22.8,,,Jia et al.,Case group,HAI caused,"Patients with HAIs were randomly selected in one hospitalincluding 10 lower respiratory tract infections includingventilator-associated pneumonia, 10 urinary tractinfections including catheter associated urinary tractinfections, 10 gastrointestinal infections including infectious diarrhea, gastrointestinal infection, andantimicrobial associated diarrhea], 10 surgical site infections, and 10 blood stream infections including central catheter associated blood stream infection"
+hos_res,E Coli,ESBL,Thailand,3,46,17.9186956521739,8.66072555095595,27.1766657533919,Apisarnthanarak et al.,,,Patients infected with ESBL-producing E.coli
+hos_res,E Coli,ESBL,France,4,17168,1.2,,,Touat et al.,Excess,,
+hos_sus,Clostridium difficile,Not reported,India,1,,4.3,,,Lenoir-Wijnkoop et al.,,,Over 65 years old patients
+hos_sus,Clostridium difficile,Not reported,India,1,,10.7,,,Lenoir-Wijnkoop et al.,,,Over 65 years old patients
+hos_sus,Clostridium difficile,Not reported,China,3,45,34.56,,,Lv et al.,,,
+hos_sus,Clostridium difficile,Not reported,Greece,3,1211,18.9,,,Jiang et al.,,,"Patients 18 years of age or older discharged from one of Rhode Island’s 11 acute-care hospitals between January 1, 2010,
 and December 31, 2011."
-hos_sus,Clostridium difficile,Not reported,India,,4.3,,,Lenoir-Wijnkoop et al.,,,Over 65 years old patients
-hos_sus,Clostridium difficile,Not reported,India,,10.7,,,Lenoir-Wijnkoop et al.,,,Over 65 years old patients
-hos_sus,Clostridium difficile,Not reported,Italy,126,36,30.9566094731434,41.0433905268566,Asensio et al.,,,All age
-hos_sus,Clostridium difficile,Not reported,Italy,129,19.94,,,Magalini et al.,,,
-hos_sus,Clostridium difficile,Not reported,Japan,11607,73.4,,,Kimura et al.,,,Multiple co-morbidities
-hos_sus,Clostridium difficile,Not reported,Japan,409,30.1028606356968,28.3724824047349,31.8332388666588,Yasunaga et al.,,,Hospitalised patients after undergoing digestive tract surgery and postoperatively diagnosed with Clostridium dificile.
-hos_sus,Clostridium difficile,Not reported,Netherlands,72,44,,,van Beurden et al.,,,Median age was 68 years old
-hos_sus,Clostridium difficile,Not reported,Poland,53,22.2990794928732,18.3183158828615,26.279843102885,Sierocka et al.,,,patients in hospital in the Lodz province
-hos_sus,Clostridium difficile,Not reported,Serbia,,27.99,,,Brkic et al.,,,
-hos_sus,Clostridium difficile,Not reported,Serbia,472,12.13,,,Stefan-Mikic et al.,,,
-hos_sus,Clostridium difficile,Not reported,South Korea,1481,49.9,,,Son et al.,,,
-hos_sus,Clostridium difficile,Not reported,Spain,75,20.6,16.6315131732485,24.5684868267515,Asensio et al.,,,All age
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),60758,5.9,,,Adejumo et al.,,,Adults 18-90
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),5159,17.8,,,Ali et al.,,,patients with liver transplant and C.difficile infection
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),58220,12.7,,,Bajaj et al.,,,Patients with cirrhosis
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),3236,22.7,,,Campbell et al.,,,Patient group with renal impairment
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),3064,21.3,,,Campbell et al.,,,Patient group of age more than 65
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),782,21.3,,,Campbell et al.,,,Cancer/bone marrow transplant
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),84,21,,,Campbell et al.,,,Inflammatory bowel disease
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),1641,29.3,,,Campbell et al.,,,Concomitant antibiotic exposure
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),4708,16.400165675446,16.0612598811342,16.7390714697579,Egorova et al.,,,"patients  after major vascular procedures including aortic abdominal aneurysm (AAA) repair, carotid endarterectomy or stenting, lower extremity revascularization
+hos_sus,Clostridium difficile,Mixed,Lebanon,3,200,23.3,,,Karaoui et al.,,,"Co-morbidities: diabetes mellitus (45); chronic obstructive pulmonary disease (20), chronic kidney disease (67); immunocompromised (92); chemotherapy (79)
+Gender: both males and females"
+hos_sus,Clostridium difficile,Not reported,Poland,3,53,22.2990794928732,18.3183158828615,26.279843102885,Sierocka et al.,,,patients in hospital in the Lodz province
+hos_sus,Clostridium difficile,Not reported,Serbia,3,472,12.13,,,Stefan-Mikic et al.,,,
+hos_sus,Clostridium difficile,Not reported,Australia,4,26,12.6,8.10957287782674,17.0904271221733,Chen  BM et al.,,,"Men and women aged 45 years and older.
+This form for age group from 45- 54 years old"
+hos_sus,Clostridium difficile,Not reported,Australia,4,99,18.5,15.9821620558533,21.0178379441467,Chen  BM et al.,,,"Men and women aged 45 years and older.
+This form for age group from 55-64 years old"
+hos_sus,Clostridium difficile,Not reported,Australia,4,130,15.7,13.7685369323665,17.6314630676335,Chen  BM et al.,,,"Men and women aged 45 years and older.
+This form for age group from 65-74 years old"
+hos_sus,Clostridium difficile,Not reported,Australia,4,221,17.7,15.9291320576347,19.4708679423653,Chen  BM et al.,,,"Men and women aged 45 years and older.
+This form for age group from 75 - 84 years old"
+hos_sus,Clostridium difficile,Not reported,Australia,4,165,16.8,14.8613521544467,18.7386478455533,Chen  BM et al.,,,"Men and women aged 45 years and older.
+This form for age group more than 85"
+hos_sus,Clostridium difficile,Not reported,Australia,4,187,6.70208556149733,6.05984465895372,7.34432646404093,CHEN et al.,,,Adults aged over 45 years
+hos_sus,Clostridium difficile,Not reported,CANADA,4,20002,13.6,,,Levy et al.,,,Economic model
+hos_sus,Clostridium difficile,Not reported,Canada,4,1471,22.8514581917063,21.8276215608412,23.8752948225715,Nanwa et al.,,,
+hos_sus,Clostridium difficile,Not reported,France,4,7477,11,,,Dinh et al.,,,Elderly patients with multiple co-morbidities
+hos_sus,Clostridium difficile,Not reported,Germany,4,36,94,,,Heimann et al.,,,Recurrence group: Patients who developed ≥1 CDAD recurrence
+hos_sus,Clostridium difficile,Not reported,Germany,4,114,32.2,,,Heimann et al.,,,Incidence group: Patients with CDAD but without CDAD recurrence
+hos_sus,Clostridium difficile,Not reported,Germany,4,45,30.8976666666667,24.4148424695943,37.3804908637391,Vonberg et al.,,,
+hos_sus,Clostridium difficile,Not reported,Italy,4,126,36,30.9566094731434,41.0433905268566,Asensio et al.,,,All age
+hos_sus,Clostridium difficile,Not reported,Italy,4,129,19.94,,,Magalini et al.,,,
+hos_sus,Clostridium difficile,Not reported,Japan,4,11607,73.4,,,Kimura et al.,,,Multiple co-morbidities
+hos_sus,Clostridium difficile,Not reported,Japan,4,409,30.1028606356968,28.3724824047349,31.8332388666588,Yasunaga et al.,,,Hospitalised patients after undergoing digestive tract surgery and postoperatively diagnosed with Clostridium dificile.
+hos_sus,Clostridium difficile,Not reported,Netherlands,4,72,44,,,van Beurden et al.,,,Median age was 68 years old
+hos_sus,Clostridium difficile,Not reported,South Korea,4,1481,49.9,,,Son et al.,,,
+hos_sus,Clostridium difficile,Not reported,Spain,4,75,20.6,16.6315131732485,24.5684868267515,Asensio et al.,,,All age
+hos_sus,Clostridium difficile,Mixed,Taiwan,4,86,25.7,18.1790518952758,33.2209481047242,Chung et al.,,,"Adult aged more than 18 years old, those include Patients with comorbidities"
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,60758,5.9,,,Adejumo et al.,,,Adults 18-90
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,5159,17.8,,,Ali et al.,,,patients with liver transplant and C.difficile infection
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,58220,12.7,,,Bajaj et al.,,,Patients with cirrhosis
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,3236,22.7,,,Campbell et al.,,,Patient group with renal impairment
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,3064,21.3,,,Campbell et al.,,,Patient group of age more than 65
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,782,21.3,,,Campbell et al.,,,Cancer/bone marrow transplant
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,84,21,,,Campbell et al.,,,Inflammatory bowel disease
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,1641,29.3,,,Campbell et al.,,,Concomitant antibiotic exposure
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,4708,16.400165675446,16.0612598811342,16.7390714697579,Egorova et al.,,,"patients  after major vascular procedures including aortic abdominal aneurysm (AAA) repair, carotid endarterectomy or stenting, lower extremity revascularization
 (LER), and LE amputation"
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),,5,,,Goyal et al.,,,Patients hospitalised with CDI
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),359,10.1032590529248,8.94834071290231,11.2581773929473,Madden et al.,,,Patients colonised with C.dificile (PCR: high Ct count >30)
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),911,8.75107025246981,8.12428023388763,9.377860271052,Madden et al.,,,Population with a positive C.dificile PCR (PCR: low Ct count <28)
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),84225,14.4,,,Magee  MBA et al.,Days,,Patients ages 18 years or more
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),,,,,Maltenfort et al.,,,patients undergoing total joint arthroplasty
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),162,25.5,,,Mittal et al.,,,Liver transplant recipients
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),10857,21.2,,,Pakyz et al.,,,adult patients with health care–associated CDI
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),63651,8,7.96544576171789,8.03455423828211,Pant et al.,,,adults with C. difficile infections
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),447,8.2,,,Pant et al.,,,Children ( aged from 1 to 20 years  ) with a principal diagnosis of IBD
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),131,13.5148854961832,11.2059931579331,15.8237778344333,Polage et al.,,,"Patients with C.dificile and C difficile toxin immunoassay positive and polymerase chain reaction positive; Tox−/PCR+, C difficile toxin immunoassay negative and polymerase chain reaction positive"
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),162,8.3512037037037,7.54557949091117,9.15682791649624,Polage et al.,,,"Patients with C.dificile and C difficile toxin immunoassay positive and polymerase chain reaction positive; Tox−/PCR+, C difficile toxin immunoassay negative and polymerase chain reaction positive"
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),,6.9,,,Sclar et al.,,,
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),1443,13.9,,,Singal et al.,,,Patients with cirrhosis
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),41207,13,,,Stewart et al.,,,patients with C.difficile infections and matched without C.difficile infections
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),177,10.63,,,Sundaram et al.,,,Patients with alcoholic hepatitis
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),255,16.3,,,Tabak et al.,,,adults with hospital-onset Clostridium difficile infection
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),68686,14.2,,,VerLee et al.,,,
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),217,18.66,,,Wilson et al.,,,Patients undergoing closure of loop ileostomy
-hos_sus,Clostridium difficile,Not reported,United States of America (USA),41767,8.01,,,Zhang et al.,,,Overall
-hos_sus,Clostridium difficile,Not reported,,10077,22.6,,,Lesperance et al.,,,patients with C. difficile after elective colonic resections
-hos_sus,Clostridium difficile,Not reported,,,,,,Sammons et al.,,,"Children aged 12 months to 18 years admitted to PHIS hospitals for at least 3 days 
-( matched exposed - community-onset  and hospital-onset )"
-hos_sus,Clostridium difficile,Not reported,,,,,,Sammons et al.,,,Children aged 12 months to 18 years admitted to PHIS hospitals for at least 3 days with  hospital-onset CDI
-hos_sus,E Coli,Mixed,Austria,95,18.7602631578947,15.8875765593167,21.6329497564728,Berger et al.,,,E. Coli bacteremia  was defined as the presence of at least one positive blood culture for E coli.
-hos_sus,E Coli,non-ESBL,Thailand,46,7.77119565217391,5.34648919709302,10.1959021072548,Apisarnthanarak et al.,,,Patients infected with non-ESBL-producing E.coli
-hos_sus,E Coli,sus.,China,130,21,,,Jia et al.,Case group,HAI caused,"Patients with HAIs were randomly selected in one hospitalincluding 10 lower respiratory tract infections includingventilator-associated pneumonia, 10 urinary tractinfections including catheter associated urinary tractinfections, 10 gastrointestinal infections including infectious diarrhea, gastrointestinal infection, andantimicrobial associated diarrhea], 10 surgical site infections, and 10 blood stream infections including central catheter associated blood stream infection"
-hos_sus,Shigella spp.,Not reported,United States of America (USA),2653,3,2.94355274905655,3.05644725094345,McCrickard et al.,,,Patients >18 years old
-hos_res,Clostridium difficile,Ciprofloxacin res.,Turkey,19,39,,,Ergen et al.,,,"Patients who developed diarrhea were detected by active surveillance, and a laboratory algorithm was applied to screen all feces samples for C. difficile in patients who had developed diarrhea three days or more after admission."
-hos_res,Clostridium difficile,Ciprofloxacin/levofloxacin res.,United States of America (USA),66,4.4,,,Naggie et al.,,,"Individuals who have 18 years old or more. Some had comorbidities such as Hypertension, Cardiovascular diseases, Diabetes mellitus, Gastroesophageal reflux, Cancer, and Bowel surgery"
-hos_res,E Coli,Carbapenem res. (MDR),China,28,27.5,,,Jia et al.,Case group,HAI caused,"Patients with HAIs were randomly selected in one hospitalincluding 10 lower respiratory tract infections includingventilator-associated pneumonia, 10 urinary tractinfections including catheter associated urinary tractinfections, 10 gastrointestinal infections including infectious diarrhea, gastrointestinal infection, andantimicrobial associated diarrhea], 10 surgical site infections, and 10 blood stream infections including central catheter associated blood stream infection"
-hos_res,E Coli,ESBL,France,17168,1.2,,,Touat et al.,Excess,,
-hos_res,E Coli,ESBL,Thailand,46,17.9186956521739,8.66072555095595,27.1766657533919,Apisarnthanarak et al.,,,Patients infected with ESBL-producing E.coli
-hos_res,E Coli,ESBL (MDR),China,124,22.8,,,Jia et al.,Case group,HAI caused,"Patients with HAIs were randomly selected in one hospitalincluding 10 lower respiratory tract infections includingventilator-associated pneumonia, 10 urinary tractinfections including catheter associated urinary tractinfections, 10 gastrointestinal infections including infectious diarrhea, gastrointestinal infection, andantimicrobial associated diarrhea], 10 surgical site infections, and 10 blood stream infections including central catheter associated blood stream infection"
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,,5,,,Goyal et al.,,,Patients hospitalised with CDI
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,10077,22.6,,,Lesperance et al.,,,patients with C. difficile after elective colonic resections
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,359,10.1032590529248,8.94834071290231,11.2581773929473,Madden et al.,,,Patients colonised with C.dificile (PCR: high Ct count >30)
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,911,8.75107025246981,8.12428023388763,9.377860271052,Madden et al.,,,Population with a positive C.dificile PCR (PCR: low Ct count <28)
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,84225,14.4,,,Magee  MBA et al.,Days,,Patients ages 18 years or more
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,162,25.5,,,Mittal et al.,,,Liver transplant recipients
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,10857,21.2,,,Pakyz et al.,,,adult patients with health care–associated CDI
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,63651,8,7.96544576171789,8.03455423828211,Pant et al.,,,adults with C. difficile infections
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,447,8.2,,,Pant et al.,,,Children ( aged from 1 to 20 years  ) with a principal diagnosis of IBD
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,131,13.5148854961832,11.2059931579331,15.8237778344333,Polage et al.,,,"Patients with C.dificile and C difficile toxin immunoassay positive and polymerase chain reaction positive; Tox−/PCR+, C difficile toxin immunoassay negative and polymerase chain reaction positive"
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,162,8.3512037037037,7.54557949091117,9.15682791649624,Polage et al.,,,"Patients with C.dificile and C difficile toxin immunoassay positive and polymerase chain reaction positive; Tox−/PCR+, C difficile toxin immunoassay negative and polymerase chain reaction positive"
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,,6.9,,,Sclar et al.,,,
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,1443,13.9,,,Singal et al.,,,Patients with cirrhosis
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,41207,13,,,Stewart et al.,,,patients with C.difficile infections and matched without C.difficile infections
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,177,10.63,,,Sundaram et al.,,,Patients with alcoholic hepatitis
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,255,16.3,,,Tabak et al.,,,adults with hospital-onset Clostridium difficile infection
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,68686,14.2,,,VerLee et al.,,,
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,217,18.66,,,Wilson et al.,,,Patients undergoing closure of loop ileostomy
+hos_sus,Clostridium difficile,Not reported,United States of America (USA),4,41767,8.01,,,Zhang et al.,,,Overall
+hos_sus,E Coli,sus.,China,3,130,21,,,Jia et al.,Case group,HAI caused,"Patients with HAIs were randomly selected in one hospitalincluding 10 lower respiratory tract infections includingventilator-associated pneumonia, 10 urinary tractinfections including catheter associated urinary tractinfections, 10 gastrointestinal infections including infectious diarrhea, gastrointestinal infection, andantimicrobial associated diarrhea], 10 surgical site infections, and 10 blood stream infections including central catheter associated blood stream infection"
+hos_sus,E Coli,non-ESBL,Thailand,3,46,7.77119565217391,5.34648919709302,10.1959021072548,Apisarnthanarak et al.,,,Patients infected with non-ESBL-producing E.coli
+hos_sus,E Coli,Mixed,Austria,4,95,18.7602631578947,15.8875765593167,21.6329497564728,Berger et al.,,,E. Coli bacteremia  was defined as the presence of at least one positive blood culture for E coli.
+hos_sus,Shigella spp.,Not reported,United States of America (USA),4,2653,3,2.94355274905655,3.05644725094345,McCrickard et al.,,,Patients >18 years old
+sym_res,Shigella spp.,Azithromycin res.,Bangladesh,1,64,4.6,,,Houpt et al.,Duration of diarrhea,Days until resolution of diarrhea,Patients in all age with diarrhea for < 96 hours
+sym_sus,Clostridium difficile,Mixed,Turkey,3,30,8.23,,,Akgul et al.,Diarrhoea duration,Diarrhoea duration (days),"Older than 18 years age, males and females.C. difficile toxin A or B positive group."
+sym_sus,Clostridium difficile,Not reported,Germany,4,36,18.5,,,Heimann et al.,Diarrhoea duration,Duration of diarrhoea (days);,Recurrence group: Patients who developed ≥1 CDAD recurrence
+sym_sus,Clostridium difficile,Not reported,Germany,4,114,5.6,,,Heimann et al.,Diarrhoea duration,Duration of diarrhoea (days);,Incidence group: Patients with CDAD but without CDAD recurrence
+sym_sus,Clostridium difficile,Not reported,Italy,4,126,12.9,11.2752835886637,14.5247164113363,Asensio et al.,Diarrhoea duration,"Mean duration of diarrhoea, days (range)",All age
+sym_sus,Clostridium difficile,Not reported,Spain,4,94,10.1,8.18182012510687,12.0181798748931,Asensio et al.,Diarrhoea duration,"Mean duration of diarrhoea, days (range)",All age
+sym_sus,Clostridium difficile,Mixed,Taiwan,4,82,6,,,Chung et al.,Diarrhoea duration,The mean duration of diarrhea after the start of treatment  was 6 days in the present study,"Adult aged more than 18 years old, those include Patients with comorbidities"
+sym_sus,Shigella spp.,Azithromycin sus.,Bangladesh,1,85,3.6,,,Houpt et al.,Duration of diarrhea,Days until resolution of diarrhea,Patients in all age with diarrhea for < 96 hours
+sym_sus,Vibrio cholerae,Mixed,Bangladesh,1,146,12.2296746575342,10.5905991019034,13.8687502131651,Khan et al.,,,Patients over the age of 6 months. This is for patients with Ogawa serotype
+sym_sus,Vibrio cholerae,Mixed,Bangladesh,1,191,16.0530628272251,14.2525353566862,17.853590297764,Khan et al.,,,Patients over the age of 6 months. This is for Inaba serotype.
