@@ -49,13 +49,13 @@ gdp_per_capita_2019 <- gdp_per_capita_data[date == "2019", c("iso3c", "NY.GDP.PC
 quantiles <- quantile(gdp_per_capita_2019$NY.GDP.PCAP.CD, probs = seq(0, 1, by = 0.25), na.rm = TRUE)
 
 # create a new column for quantile levels
-gdp_per_capita_2019[, quantile_level := cut(NY.GDP.PCAP.CD, quantiles, labels = FALSE, include.lowest = TRUE)]
+gdp_per_capita_2019[, Quantile := cut(NY.GDP.PCAP.CD, quantiles, labels = FALSE, include.lowest = TRUE)]
 
 # add quantile level of GDP per capita to data
 dat <- left_join(dat, gdp_per_capita_2019, by = c("iso3c"))
 
 # add quantile level for Taiwan ($25,903, 2019)
-dat <- dat[iso3c == "TWN", quantile_level := 4]
+dat <- dat[iso3c == "TWN", Quantile := 4]
 
 ### pathogen
 names(dat)
@@ -63,7 +63,7 @@ unique(dat$Pathogen)
 
 ### Study data
 dat_study <- dat[, c("Study", "Pathogen", "Susceptible_profile", "Resistance_profile", 
-                     "Country","Cohort", "iso3c", "quantile_level")]
+                     "Country","Cohort", "iso3c", "Quantile")]
 dat_study$Pathogen <- factor(dat_study$Pathogen,
                              levels = c("S. Typhi", 
                                         "S. Paratyphi",
@@ -247,6 +247,8 @@ generate_table_plot <- function(dat, subgroup_input,
                                 mode, figure_name){
   
   dat <- data.table(dat)
+  dat$Quantile <- factor(dat$Quantile, levels = c(1, 2, 3, 4))
+  
   colnames(dat)[9:17] <- c("value", "statistical_measure", "comment", "uncertainty",
                            "note", "higher", "lower", "other", "n")
   dat[dat == "NULL"] <- NA
@@ -271,9 +273,9 @@ generate_table_plot <- function(dat, subgroup_input,
   # Update the "SD" column where "uncertainty" is "95% confidence interval" and "higher" is NA
   dat_meta[(uncertainty == "95% confidence intervals" & !is.na(higher)),
            SE := (higher - lower) / (2 * qnorm(0.975))]
-  dat_meta[(uncertainty != is.na(SE)),
+  dat_meta[(uncertainty == "Standard error" & !is.na(SE)),
            SD := SE * sqrt(n)]
-  dat_meta$subgroup_pathogen_GPC <- paste(dat_meta$Pathogen, dat_meta$quantile_level, sep = "")
+  dat_meta$subgroup_pathogen_GPC <- paste(dat_meta$Pathogen, dat_meta$Quantile, sep = "")
   # ----------------------------------------------------------------------------
 
   ### adjustment in cost
@@ -309,7 +311,7 @@ generate_table_plot <- function(dat, subgroup_input,
                       q3 = higher_i,
                       min = lower_r,
                       max = higher_r,
-                      subgroup = quantile_level,
+                      subgroup = Quantile,
                       random = TRUE,
                       fixed = FALSE,
                       overall = FALSE)
@@ -320,7 +322,7 @@ generate_table_plot <- function(dat, subgroup_input,
                      Pathogen       = ma.data$data$Pathogen,
                      Classification = ma.data$data$Profile,
                      Country        = ma.data$data$Country,
-                     Quantile_level = ma.data$data$quantile_level,
+                     Quantile_level = ma.data$data$Quantile,
                      Sample_size    = ma.data$n,
                      Mean_value     = ma.data$mean,
                      Lower          = ma.data$lower,
@@ -338,7 +340,7 @@ generate_table_plot <- function(dat, subgroup_input,
                      Pathogen       = ma.data$data$Pathogen,
                      Classification = ma.data$data$Profile,
                      Country        = ma.data$data$Country,
-                     Quantile_level = ma.data$data$quantile_level,
+                     Quantile_level = ma.data$data$Quantile,
                      Sample_size    = ma.data$n,
                      Mean_value     = ma.data$mean,
                      Lower          = ma.data$lower,

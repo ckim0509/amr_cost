@@ -2,7 +2,7 @@ Category,Pathogen,Classification,Country,Quantile_level,Sample_size,Mean_value,L
 sym_sus,S. Typhi,Nalidixic acid sus.,India,1,4,4.80375,-0.145654001363772,9.75315400136377,Bandyopadhyay et al.,fever clearance time,Fever clearance time (FCT),Adult aged more than 12 years . Naldixic acid susceptible and resistant S. Typhi
 sym_sus,S. Typhi,Drug-sensitive,Pakistan,1,13,26.6168379162366,12.4403182230065,40.7933576094667,Herekar et al.,fever clearance time,,adult patients diagnosed with enteric fever
 sym_sus,S. Typhi,Drug-sensitive,Pakistan,1,31,15.9860060217051,8.36875020282894,23.6032618405813,Herekar et al.,fever clearance time,,children at the age of 5-6 diagnosed with enteric fever
-sym_sus,S. Typhi and S. Paratyphi,Not reported,India,1,30,6.4,,,Dahiya et al.,fever clearance time,The mean duration of defervescence of fever,Children
+sym_sus,S. Typhi and S. Paratyphi,Not reported,India,1,30,6.4,5.00442856790062,7.79557143209938,Dahiya et al.,fever clearance time,The mean duration of defervescence of fever,Children
 sym_sus,S. Typhi and S. Paratyphi,Nalidixic acid sus.,Australia,4,57,3.3,,,Hume et al.,fever clearance time,,"59 cases (56.7%) of S. typhi infection, 43 cases (41.3%) of S. paratyphi A infection and two cases (1.9%) of S. paratyphi B infection, median age was 24.7 years (range 15.4–66.5 years)"
 sym_sus,S. Typhi,Mixed,Australia,4,59,4.7,,,Hume et al.,fever clearance time,,Patients who are 15 years old or more
 sym_sus,S. Paratyphi,Mixed,Australia,4,45,3.1,,,Hume et al.,fever clearance time,,Patients who are 15 years old or more
@@ -12,20 +12,20 @@ sym_res,S. Typhi,MDR,Pakistan,1,77,24.6354629624082,16.3226800798745,32.94824584
 sym_res,S. Typhi,MDR,Pakistan,1,629,10.0401346866298,7.39915391708412,12.6811154561756,Herekar et al.,fever clearance time,Fever days,children at the age of 5-6  with enteric fever
 sym_res,S. Typhi,XDR,Pakistan,1,86,18.7840493026826,14.9371275709559,22.6309710344093,Herekar et al.,fever clearance time,Fever days,adult patients diagnosed with enteric fever
 sym_res,S. Typhi,XDR,Pakistan,1,679,9.48517650709376,7.68618272031857,11.2841702938689,Herekar et al.,fever clearance time,Fever days,children at the age of 5-6 diagnosed with enteric fever
-sym_res,S. Typhi,MDR,Turkey,3,137,3.2,,,Aypak et al.,fever clearance time,Time-to-fever defervescence,Hospitalised patients with typhoid fever receiving ceftriaxtone
-sym_res,S. Typhi,MDR,Turkey,3,15,4.6,,,Aypak et al.,fever clearance time,Time-to-fever defervescence,Hospitalised patients with typhoid fever receiving ciprofloxacin
+sym_res,S. Typhi,MDR,Turkey,3,137,3.2,2.96556856653428,3.43443143346572,Aypak et al.,fever clearance time,Time-to-fever defervescence,Hospitalised patients with typhoid fever receiving ceftriaxtone
+sym_res,S. Typhi,MDR,Turkey,3,15,4.6,3.6890910554452,5.5109089445548,Aypak et al.,fever clearance time,Time-to-fever defervescence,Hospitalised patients with typhoid fever receiving ciprofloxacin
 sym_res,S. Typhi and S. Paratyphi,Nalidixic acid res.,Australia,4,39,5.6,,,Hume et al.,fever clearance time,fever clearance time,"59 cases (56.7%) of S. typhi infection, 43 cases (41.3%) of S. paratyphi A infection and two cases (1.9%) of S. paratyphi B infection, median age was 24.7 years (range 15.4–66.5 years)"
 hos_sus,S. Typhi,Drug-sensitive,Pakistan,1,13,4,3.34820599111586,4.65179400888414,Herekar et al.,,,adult patients diagnosed with enteric fever
 hos_sus,S. Typhi,Drug-sensitive,Pakistan,1,31,4.96680550762104,4.1965212113302,5.73708980391189,Herekar et al.,,,children at the age of 5-6 diagnosed with enteric fever
 hos_sus,S. Typhi and S. Paratyphi,Mixed,Bangladesh,1,1295,6.70030115830116,6.53862095108503,6.86198136551728,Longley et al.,,,"patients with blood culture–confirmed Typhi or
 Paratyphi A of any age"
 hos_sus,S. Typhi,Mixed,India,1,303.36,6.5,,,Ganesh et al.,The mean duration of hospital stay was 6.5 days for uncomplicated cases and there was no mortality in our series.,,"All ages, males and females"
-hos_sus,S. Typhi and S. Paratyphi,Mixed,India,1,156,6,,,Sharma et al.,,,
+hos_sus,S. Typhi and S. Paratyphi,Mixed,India,1,156,6,5.76461593922335,6.23538406077665,Sharma et al.,,,
 hos_sus,S. Typhi and S. Paratyphi,Mixed,Nepal,1,455,6,5.7266688532057,6.2733311467943,Longley et al.,,,"patients with blood culture–confirmed Typhi or
 Paratyphi A of any age"
 hos_sus,S. Typhi and S. Paratyphi,Mixed,Pakistan,1,1054,3.35018500948767,3.21574004887899,3.48462997009634,Longley et al.,,,"patients with blood culture–confirmed Typhi or
 Paratyphi A of any age"
-hos_sus,S. Typhi and S. Paratyphi,Not reported,India,1,146,9.64,,,Bandyopadhyay et al.,Baseline characteristics of patients with typhoid fever (S. Typhi or S. Paratyphi),,
+hos_sus,S. Typhi and S. Paratyphi,Not reported,India,1,146,9.64,8.79003126683175,10.4899687331682,Bandyopadhyay et al.,Baseline characteristics of patients with typhoid fever (S. Typhi or S. Paratyphi),,
 hos_sus,S. Typhi and S. Paratyphi,Not reported,India,1,30,10,7.10996540662427,12.8900345933757,Dahiya et al.,,,Children
 hos_sus,S. Typhi and S. Paratyphi,Not reported,India,1,63,7.35,,,Nagaraj et al.,Standard deviation,,"Patients who received azythromicin
 (Children aged between 2 and 12 years)"
@@ -38,26 +38,28 @@ hos_sus,S. Paratyphi,Mixed,Australia,4,45,5.8,,,Hume et al.,,,Patients who are 1
 hos_sus,S. Typhi and S. Paratyphi,Mixed,New Zealand,4,162,6,5.53964330697569,6.46035669302431,Lane et al.,,,patients all ages
 hos_sus,S. non-Typhi,Mixed,Vietnam,2,450,5,4.72514474943138,5.27485525056862,Duong et al.,,,Children less than 16 years old
 hos_sus,S. non-Typhi,Nalidixic acid sus.,China,3,163,4.66,,,Broughton et al.,,,Patients 1 year of age or older. This form is for patients with quinolone-susceptible pathogen
-hos_sus,S. non-Typhi,Mixed,China,3,171,6.05,,,Liang et al.,,,children from 9 days to 9 years
+hos_sus,S. non-Typhi,Mixed,China,3,171,6.05,5.37253249235116,6.72746750764884,Liang et al.,,,children from 9 days to 9 years
 hos_sus,S. non-Typhi,Pansusceptible,USA,4,48,4,,,Mukherjee et al.,,,patients all ages
 hos_sus,S. non-Typhi,Pansusceptible,USA,4,301,5.20632832027667,4.18168044646479,6.23097619408855,Solghan et al.,,,patients with S. nonthypi infection
 hos_sus,S. non-Typhi,Ampicillin sus.,USA,4,49,4,,,Mukherjee et al.,,,patients all ages
 hos_sus,S. non-Typhi,Tetracycline sus.,USA,4,52,4.15,,,Mukherjee et al.,,,patients all ages
+hos_sus,S. non-Typhi,Mixed,Italy,4,252,5.70154761904762,5.1492058554553,6.25388938263994,Pagani et al.,,,We  retrospectively  selected  for  our  study  all  patients  with  a  positive  culture  for Salmonellaspp.
 hos_sus,S. non-Typhi,Mixed,Taiwan,4,118,6.8,6.21201080463798,7.38798919536202,Huang et al.,standard error of the mean.,,Children who are 2 years old or more. This is for duration of fever after admission.
 hos_sus,S. non-Typhi,Mixed,Taiwan,4,179,8.6,7.81601440618398,9.38398559381602,Huang et al.,standard error of the mean.,,This form is for Children less than 2 years old. For Duration of Fever after admission
-hos_sus,S. non-Typhi,Not reported,Spain,4,21660,7.1,,,Garrido-Estepa et al.,,,patients all ages
+hos_sus,S. non-Typhi,Not reported,Spain,4,21660,7.1,6.9881339892652,7.2118660107348,Garrido-Estepa et al.,,,patients all ages
 hos_res,S. Typhi,MDR,Pakistan,1,77,5.40008406430559,4.84280253028098,5.95736559833019,Herekar et al.,,,adult patients diagnosed with enteric fever
 hos_res,S. Typhi,MDR,Pakistan,1,629,4.10802509038786,3.94375355926779,4.27229662150793,Herekar et al.,,,children at the age of 5-6  with enteric fever
 hos_res,S. Typhi,XDR,Pakistan,1,947,12.3016473072862,11.2140595159382,13.3892350986342,Fatima et al.,,,"All ages, male and females. This form is for XDR patients who were treated with a carbapenem or macrolides"
+hos_res,S. Typhi,XDR,Pakistan,1,101,6,5.12019380928293,6.87980619071707,Shahid et al.,,,Children with ages ranging from birth till 15 years were included in the study.
 hos_res,S. Typhi,XDR,Pakistan,1,86,8.37220157075567,7.59417245647385,9.15023068503748,Herekar et al.,,,adult patients diagnosed with enteric fever
 hos_res,S. Typhi,XDR,Pakistan,1,679,6.11677508865257,5.89944698018309,6.33410319712206,Herekar et al.,,,children at the age of 5-6 diagnosed with enteric fever
-hos_res,S. Typhi,XDR,Pakistan,1,101,6,5.12019380928293,6.87980619071707,Shahid et al.,,,Children with ages ranging from birth till 15 years were included in the study.
+hos_res,S. Typhi,XDR,Pakistan,1,77,16.56,15.6956021192441,17.4243978807559,Khan et al.,,,All   patients   admitted   to   PNS   Shifa   Hospital   during   the     study   period   with   typhoid   fever   were   enrolled   in   the   study
 hos_res,S. Typhi,Amikacin res.,Turkey,3,45,2.18713990674244,1.92242943771214,2.45185037577274,Karakecili et al.,,,58 patients median age was 32.5 years (range 18-81 years) 108 patients but only 45 were treated in the hospital
-hos_res,S. Typhi,MDR,Turkey,3,137,3.7,,,Aypak et al.,,,Hospitalised patients with typhoid fever receiving ceftriaxtone
-hos_res,S. Typhi,MDR,Turkey,3,15,5.6,,,Aypak et al.,,,Hospitalised patients with typhoid fever receiving ciprofloxacin
+hos_res,S. Typhi,MDR,Turkey,3,137,3.7,3.41533325936306,3.98466674063694,Aypak et al.,,,Hospitalised patients with typhoid fever receiving ceftriaxtone
+hos_res,S. Typhi,MDR,Turkey,3,15,5.6,4.48666684554414,6.71333315445586,Aypak et al.,,,Hospitalised patients with typhoid fever receiving ciprofloxacin
 hos_res,S. Typhi and S. Paratyphi,Nalidixic acid res.,Australia,4,39,7.9,,,Hume et al.,,,"59 cases (56.7%) of S. typhi infection, 43 cases (41.3%) of S. paratyphi A infection and two cases (1.9%) of S. paratyphi B infection, median age was 24.7 years (range 15.4–66.5 years)"
 hos_res,S. non-Typhi,Nalidixic acid res.,China,3,162,8.54,,,Broughton et al.,,,Patients 1 year of age or older. This form is for the quinolone-resistant pathogens
-hos_res,S. non-Typhi,MDR,China,3,49,8.93,,,Liang et al.,,,children from 9 days to 9 years
+hos_res,S. non-Typhi,MDR,China,3,49,8.93,6.60604270404537,11.2539572959546,Liang et al.,,,children from 9 days to 9 years
 hos_res,S. non-Typhi,Ampicillin res.,USA,4,10,6.2,,,Mukherjee et al.,,,patients all ages
 hos_res,S. non-Typhi,res.,USA,4,39,5.9,,,Mukherjee et al.,,,patients all ages
 hos_res,S. non-Typhi,Tetracycline res.,USA,4,7,6,,,Mukherjee et al.,,,patients all ages

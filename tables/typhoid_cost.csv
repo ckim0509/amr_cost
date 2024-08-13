@@ -13,7 +13,7 @@ cost_sus,S. Typhi,Not reported,China,3,58,415.285569748889,,,Poulos et al.,,,all
 cost_sus,S. Typhi and S. Paratyphi,Not reported,United Kingdom,4,138,3067.02896825367,,,Reddy et al.,Average cost per patient,,all patients admitted with S.ser.Typhi or S. ser. Paratyphi bacteraemia,Inpatient treatment costs and the approximate public health costs,
 cost_sus,S. Typhi and S. Paratyphi,Not reported,United Kingdom,4,138,2873.61272701244,,,Reddy et al.,Average cost per patient,,all patients admitted with S.ser.Typhi or S. ser. Paratyphi bacteraemia,Inpatient treatment costs,
 cost_sus,S. non-Typhi,Nalidixic acid sus.,China,3,163,3492.70893765794,,,Broughton et al.,,,Patients 1 year of age or older. This form is for patients with quinolone-susceptible pathogen,Medical costs,
-cost_sus,S. non-Typhi,Not reported,Spain,4,21660,5351.20565798155,,,Garrido-Estepa et al.,,,patients all ages,Hospital costs,
+cost_sus,S. non-Typhi,Not reported,Spain,4,21660,5351.20565798155,5287.31310613692,5415.09820982619,Garrido-Estepa et al.,,,patients all ages,Hospital costs,
 cost_res,S. Typhi and S. Paratyphi,MDR,Pakistan,1,169,153.75807706503,124.464529205805,183.051624924255,Mejia et al.,a median cost of illness per case,,"patients with blood culture–confirmed enteric fever or with a
 nontraumatic terminal ileal perforation","Direct medical costs, direct nonmedical costs, and indirect costs (patient & caregiver)",Total cost of illness per case
 cost_res,S. Typhi and S. Paratyphi,MDR,Pakistan,1,164,138.846904767918,110.869210849912,166.824598685923,Mejia et al.,,,"patients with blood culture–confirmed enteric fever or with a
